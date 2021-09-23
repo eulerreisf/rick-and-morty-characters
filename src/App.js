@@ -1,10 +1,14 @@
+import { ApolloProvider } from '@apollo/client';
+import client from './config/graphql';
 import Content from './components/Content';
 
 const App = () => {
   return (
-    <div className="App">
-      <Content />
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <Content />
+      </div>
+    </ApolloProvider>
   );
 };
 

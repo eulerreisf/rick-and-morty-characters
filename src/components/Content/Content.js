@@ -1,13 +1,16 @@
 import { Grid } from '@material-ui/core';
 
 import useStyles from './Content.styles';
+import useGetCharacters from '../../hooks/useGetCharacters';
 
 import Card from '../Card';
 
-const data = [1, 2, 3, 5];
-
 const Content = () => {
   const classes = useStyles();
+
+  const { getCharacters, loading, error } = useGetCharacters();
+
+  const characters = getCharacters();
 
   return (
     <Grid
@@ -16,9 +19,9 @@ const Content = () => {
       direction="row"
       justifyContent="flex-start"
     >
-      {data.map(() =>
+      {!loading && characters.map((character) =>
         <Grid item xs={4}>
-          <Card />
+          <Card character={character} />
         </Grid>
       )}
     </Grid>
