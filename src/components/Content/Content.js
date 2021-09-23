@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Grid, CircularProgress } from '@material-ui/core';
 
 import useStyles from './Content.styles';
 import useGetCharacters from '../../hooks/useGetCharacters';
@@ -11,6 +11,10 @@ const Content = () => {
   const { getCharacters, loading, error } = useGetCharacters();
 
   const characters = getCharacters();
+
+  if (loading) {
+    return (<CircularProgress />);
+  }
 
   return (
     <Grid
