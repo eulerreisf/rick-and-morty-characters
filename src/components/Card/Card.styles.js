@@ -1,9 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const styles = makeStyles({
-  content: {
-    minHeight: 228,
-    minWidth: 342
+  container: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    maxWidth: 400
+  },
+  cardMedia: {
+    width: '33%',
+    height: '33%',
+    padding: 10
   }
 });
 

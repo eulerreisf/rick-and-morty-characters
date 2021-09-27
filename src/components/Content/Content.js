@@ -17,18 +17,13 @@ const Content = () => {
   }
 
   return (
-    <Grid
-      container
-      spacing={2}
-      direction="row"
-      justifyContent="flex-start"
-    >
+    <div className={classes.content}>
       {!loading && characters.map((character) =>
-        <Grid item xs={4}>
+        <div>
           <Card character={character} />
-        </Grid>
+        </div>
       )}
-    </Grid>
+    </div>
   );
 };
 
